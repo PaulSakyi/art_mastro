@@ -195,3 +195,23 @@ html {
     color: white;
     cursor: pointer;
 }
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
