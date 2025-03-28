@@ -113,3 +113,23 @@ section {
     height: auto;
     display: block;
 }
+/* Background Image */
+body {
+    background-image: url('pexels-steve-1789968.jpg'); /* Make sure the filename matches */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Overlay Container */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
