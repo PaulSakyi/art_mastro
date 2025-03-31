@@ -34,7 +34,8 @@
         <p>No artworks uploaded yet.</p>
     </section>
 
-    <section id="upload-section">
+    <!-- Upload Section (Hidden by Default) -->
+    <section id="upload-section" style="display: none;">
         <h2>Upload Your Artwork</h2>
         <form id="upload-form" enctype="multipart/form-data">
             <input type="file" id="file-input" name="file" required>
@@ -49,4 +50,15 @@
         <p>✉ Mail: <a href="mailto:paulsak123@gmail.com">paulsak123@gmail.com</a></p>
         <form id="contact-form">
             <input type="text" placeholder="Your Name" required>
-            <input type
+        </form>
+    </section>
+
+    <script>
+        // Admin check (Modify 'isAdmin' to true to show the upload section)
+        const isAdmin = false; 
+        if (isAdmin) {
+            document.getElementById("upload-section").style.display = "block";
+        }
+    </script>
+</body>
+</html>
