@@ -2,33 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="description" content="Artmastro - Pencil Drawings, Paintings, and Pen Art. Available for commissions worldwide.">
     <meta name="keywords" content="art, drawings, paintings, pencil art, commissions, portraits, custom art">
-    <meta name="author" content="Artmastro">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="author" content="Artmastro"> 
     <title>ArtMastro - Home</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body> 
-
-    <header>
-        <nav>
-            <ul>
-                <li id="logo">Art_Mastro</li>
-=======
-    <title>Art Mastro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1 id="logo">art_mastro</h1>
         <nav>
             <ul>
->>>>>>> ac19432 (Reinitialized repository and added files)
-                <li><a href="#home">Home</a></li>
+                <li id="logo">Art_Mastro</li>
+                <li><a href="#home">Home</a></li> 
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About</a></li>
@@ -36,9 +22,10 @@
         </nav>
     </header>
     
-    <section id="home"> 
+    <section id="home">
         <h1>Welcome</h1>
-    </section>    
+        <p>Discover amazing artworks and creative designs.</p>
+    </section>
 
     <section id="gallery">
         <h2>Gallery</h2>
@@ -48,12 +35,15 @@
             <img src="art3.jpg" alt="Art 3" class="gallery-img">    
         </div>
     </section>
-    <!-- Lightbox container -->
-    <div id="lightbox">
-        <span id="close-lightbox">&times;</span>
-        <img id="lightbox-img" src="">
-    </div>
-</section>
+    
+    <section id="upload-section">
+        <h2>Upload Your Artwork</h2>
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" id="file-input" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+        <p id="status"></p>
+    </section>
 
     <section id="contact">
         <h2>Contact Me</h2>
@@ -68,7 +58,6 @@
     </section>
 
     <section id="about">
-        <div class="overlay"></div>
         <h2>About Me</h2>
         <p>I specialize in pencil drawings, paintings, and pen art, capturing beauty beyond vision and imagination.</p>
         <p>Whether you're looking for custom portraits, unique artwork, or inspiring designs, my art tells stories that connect hearts.</p>
@@ -77,38 +66,7 @@
     </section>
 
     <button id="dark-mode-toggle">Toggle Dark Mode</button>
-
+    
     <script src="script.js" defer></script>
-</body>
-</html>
-<form id="contact-form">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <textarea id="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-    <p id="form-message"></p>
-</form>
-        <h2>Welcome</h2>
-        <p>Discover amazing artworks and creative designs.</p>
-    </section>
-    
-    <section id="upload-section">
-        <h2>Upload Your Artwork</h2>
-        <form id="upload-form" enctype="multipart/form-data">
-            <input type="file" id="file-input" name="file" required>
-            <button type="submit">Upload</button>
-        </form>
-        <p id="status"></p>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery-section">
-        <h2>Gallery</h2>
-        <div id="gallery">
-            <?php include 'gallery.php'; ?>
-        </div>
-    </section>
-    
-    <script src="script.js"></script>
 </body>
 </html>
