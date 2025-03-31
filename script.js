@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.getElementById("dark-mode-toggle").addEventListener("click", function() {
     document.body.classList.toggle("dark-mode");
 });
@@ -50,4 +51,48 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     
     // Clear form fields
     document.getElementById("contact-form").reset();
+=======
+document.addEventListener("DOMContentLoaded", function () {
+    // Toggle mobile menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+        });
+    }
+
+    // File Upload Handling
+    const uploadForm = document.getElementById("upload-form");
+    const fileInput = document.getElementById("file-input");
+    const uploadStatus = document.getElementById("upload-status");
+
+    if (uploadForm) {
+        uploadForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            
+            const file = fileInput.files[0];
+            if (!file) {
+                uploadStatus.innerText = "Please select a file to upload.";
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            fetch("upload.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                uploadStatus.innerText = data;
+            })
+            .catch(error => {
+                uploadStatus.innerText = "Error uploading file.";
+            });
+        });
+    }
+>>>>>>> ac19432 (Reinitialized repository and added files)
 });
