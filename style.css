@@ -175,4 +175,8 @@ html {
 body {
     background-image: url('images/pexels-steve-1789968.jpg');
 }
- 
+.whatsapp-logo {
+    display: block;
+    width: 50px; /* Adjust size */
+  }
+   
