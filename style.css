@@ -175,11 +175,13 @@ html {
 body {
     background-image: url('images/pexels-steve-1789968.jpg');
 }
+
 .whatsapp-logo {
     display: block;
     width: 50px; /* Adjust size */
-  }
-  .gallery-images {
+}
+
+.gallery-images {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
@@ -196,4 +198,95 @@ body {
 
 .gallery-item:hover {
     transform: scale(1.05);
-} 
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 60px 10px;
+    }
+
+    .gallery-container {
+        gap: 10px;
+    }
+
+    .gallery-container img {
+        width: 150px;
+    }
+
+    #contact-form {
+        width: 90%;
+    }
+
+    #contact-form input, 
+    #contact-form textarea {
+        padding: 8px;
+    }
+
+    #contact-form button {
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    #logo {
+        font-size: 20px;
+        position: relative;
+        left: 10px;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    /* Adjust background size */
+    body {
+        background-size: cover;
+    }
+
+    #dark-mode-toggle {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .gallery-container img {
+        width: 120px;
+    }
+
+    #contact-form {
+        width: 90%;
+    }
+
+    #contact-form input, 
+    #contact-form textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #contact-form button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #logo {
+        font-size: 18px;
+    }
+}
