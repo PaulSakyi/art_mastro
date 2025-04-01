@@ -42,11 +42,12 @@
             <img src="whatsapp-icon.png" alt="WhatsApp Logo" width="20px">
             <a href="https://wa.me/233558251796" target="_blank">+233 558251796</a>
         </p>
-        <form id="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+        <form id="contact-form" action="https://formsubmit.co/paulsak123@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>        
         </form>
     </section>
 
