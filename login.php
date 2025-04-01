@@ -4,8 +4,8 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Assuming you are logging in with a username and password
     // Replace with your own authentication logic
-    $username = "Paul";
-    $password = "paulsak123Abd0558#"; // Change to a secure password!
+    $username = "admin";
+    $password = "yourpassword"; // Change to a secure password!
 
     if ($_POST['username'] == $username && $_POST['password'] == $password) {
         $_SESSION['logged_in'] = true;
@@ -42,5 +42,5 @@ if (isset($error)) {
     <button type="submit">Login</button>
 </form>
 
-</body> 
+</body>
 </html>
