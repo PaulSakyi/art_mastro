@@ -70,6 +70,13 @@ section {
     text-align: center;
 }
 
+/* About ArtMastro Section */
+#about-artmastro p {
+    font-weight: 600; /* Makes text bold */
+    font-size: 18px;  /* Adjust size if needed */
+    color: #333; /* Ensures good contrast */
+}
+
 /* Gallery */
 .gallery-container {
     display: flex;
