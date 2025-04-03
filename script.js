@@ -50,12 +50,26 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     
     // Clear form fields
     document.getElementById("contact-form").reset();
-});
-function openLightbox(src) {
-    document.getElementById("lightbox").style.display = "block";
-    document.getElementById("lightbox-img").src = src;
-}
+}); 
+document.addEventListener("DOMContentLoaded", function () {
+    const lightboxLinks = document.querySelectorAll(".lightbox");
+    const lightboxOverlay = document.createElement("div");
+    lightboxOverlay.classList.add("lightbox-overlay");
 
-function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-}
+    const lightboxImage = document.createElement("img");
+    lightboxOverlay.appendChild(lightboxImage);
+    document.body.appendChild(lightboxOverlay);
+
+    lightboxLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const imageSrc = link.getAttribute("href");
+            lightboxImage.src = imageSrc;
+            lightboxOverlay.classList.add("active");
+        });
+    });
+
+    lightboxOverlay.addEventListener("click", function () {
+        lightboxOverlay.classList.remove("active");
+    });
+});

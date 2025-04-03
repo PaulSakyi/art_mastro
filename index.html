@@ -30,11 +30,17 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-container">
-            <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1" onclick="openLightbox('images/20220801_083857.jpg')">
-            <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2" onclick="openLightbox('images/20220827_012035.jpg')">
-            <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3" onclick="openLightbox('images/20220816_121020.jpg')">
+            <a href="images/20220801_083857.jpg" class="lightbox">
+                <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1">
+            </a>
+            <a href="images/20220827_012035.jpg" class="lightbox">
+                <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2">
+            </a>
+            <a href="images/20220816_121020.jpg" class="lightbox">
+                <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3">
+            </a>
         </div>
-    </section>
+    </section>    
     
     <!-- Lightbox Container -->
     <div id="lightbox" class="lightbox">
@@ -67,5 +73,6 @@
         <p>📌 Available for commissions worldwide!</p>
         <p>📩 Let's create something amazing together - <a href="#contact">Contact me now.</a></p>
     </section>
+    <script src="script.js"></script>
 </body> 
 </html> 
