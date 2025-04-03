@@ -33,11 +33,13 @@
             <?php
             $imageFolder = "uploads/";
             $images = glob($imageFolder . "*.{jpg,png,jpeg,gif}", GLOB_BRACE);
+    
             foreach ($images as $image) {
                 echo "<img src='$image' class='gallery-item' alt='Gallery Image'>";
             } 
+            ?>
         </div>
-    </section>       
+    </section>          
 
     <section id="contact">
         <h2>Contact Me</h2>
@@ -62,7 +64,7 @@
         for custom portraits, unique artwork, or inspiring designs, my art tells stories that connect hearts.</p>
 
         <p>📌 Available for commissions worldwide!</p>
-        <p>📩 Let’s create something amazing together – <a href="#contact">Contact me now.</a></p>
+        <p>📩 Let's create something amazing together - <a href="#contact">Contact me now.</a></p>
     </section>
 </body> 
 </html>
