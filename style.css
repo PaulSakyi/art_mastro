@@ -232,3 +232,16 @@ body {
 .lightbox-overlay.active {
     display: flex;
 }
+.gallery-item {
+    display: block;
+    width: 100%; /* Adjust as needed */
+    max-width: 400px; /* Set a max width */
+    border-radius: 8px; /* Smooth corners */
+    transition: 0.3s ease-in-out;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6); /* Dark shadow */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+}
