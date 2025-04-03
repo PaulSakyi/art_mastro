@@ -249,3 +249,10 @@ header {
     border-radius: 50%;  /* This creates the circular effect */
     object-fit: cover;   /* Ensures the image is contained in the circle without distortion */
 }
+figcaption {
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 5px;
+    color: #ffffff;
+}
