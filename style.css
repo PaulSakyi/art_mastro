@@ -151,10 +151,9 @@ section {
 .gallery-item:hover {
     transform: scale(1.05);
 }
-
-/* Background Image */
-body {
-    background-image: url('images/pexels-steve-1789968.jpg');
+body { 
+    background-image: url('images/paint-splatter-images-background-copy-space_1179130-600099.jpg');
     background-size: cover;
     background-position: center;
-}
+    background-attachment: fixed;
+} 
