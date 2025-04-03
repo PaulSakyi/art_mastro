@@ -34,12 +34,16 @@
             $imageFolder = "uploads/";
             $images = glob($imageFolder . "*.{jpg,png,jpeg,gif}", GLOB_BRACE);
     
-            foreach ($images as $image) {
-                echo "<img src='$image' class='gallery-item' alt='Gallery Image'>";
-            } 
+            if ($images) {
+                foreach ($images as $image) {
+                    echo "<img src='$image' class='gallery-item' alt='Gallery Image'>";
+                }
+            } else {
+                echo "<p>No images found in the gallery.</p>";
+            }
             ?>
         </div>
-    </section>          
+    </section>           
 
     <section id="contact">
         <h2>Contact Me</h2>
