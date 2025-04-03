@@ -89,7 +89,9 @@ section {
 }
 
 .gallery-container img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Zoom effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+
 }
 
 /* Contact Form */
@@ -246,7 +248,12 @@ body {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
 }
 .gallery-container img {
-    pointer-events: none;
-    -webkit-user-drag: none;
-    user-select: none;
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    pointer-events: none; /* Prevent drag and select */
+    -webkit-user-drag: none; /* Prevent drag */
+    user-select: none; /* Prevent selection */
 }
