@@ -50,47 +50,4 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     
     // Clear form fields
     document.getElementById("contact-form").reset();
-}); 
-document.addEventListener("DOMContentLoaded", function () {
-    const lightboxLinks = document.querySelectorAll(".lightbox");
-    const lightboxOverlay = document.createElement("div");
-    lightboxOverlay.classList.add("lightbox-overlay");
-
-    const lightboxImage = document.createElement("img");
-    lightboxOverlay.appendChild(lightboxImage);
-    document.body.appendChild(lightboxOverlay);
-
-    lightboxLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            const imageSrc = link.getAttribute("href");
-            lightboxImage.src = imageSrc;
-            lightboxOverlay.classList.add("active");
-        });
-    });
-
-    lightboxOverlay.addEventListener("click", function () {
-        lightboxOverlay.classList.remove("active");
-    });
-});
-document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-});
-
-document.querySelectorAll('.gallery-container img').forEach(image => {
-    image.addEventListener('dragstart', function (e) {
-        e.preventDefault(); // Prevent dragging the image
-    });
-});
-function openLightbox(event) {
-    event.preventDefault();  // Prevents the default action (navigation to image)
-    var lightbox = document.getElementById('lightbox');
-    var lightboxImg = document.getElementById('lightbox-img');
-    lightbox.style.display = 'flex';
-    lightboxImg.src = event.target.src; // Set the image source to the clicked image
-}
-
-function closeLightbox() {
-    var lightbox = document.getElementById('lightbox');
-    lightbox.style.display = 'none'; // Hide the lightbox
-}
+});  

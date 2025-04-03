@@ -30,23 +30,11 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-container">
-            <a href="images/20220801_083857.jpg" class="lightbox" onclick="openLightbox(event)">
-                <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1">
-            </a>
-            <a href="images/20220827_012035.jpg" class="lightbox" onclick="openLightbox(event)">
-                <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2">
-            </a>
-            <a href="images/20220816_121020.jpg" class="lightbox" onclick="openLightbox(event)">
-                <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3">
-            </a>
+            <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1">
+            <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2">
+            <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3">
         </div>
-    </section>
-    
-    <!-- Lightbox Container -->
-    <div id="lightbox" class="lightbox">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" class="lightbox-content">
-    </div>             
+    </section>    
 
     <section id="contact">
         <h2>Contact Me</h2>
@@ -72,12 +60,7 @@
 
         <p>📌 Available for commissions worldwide!</p>
         <p>📩 Let's create something amazing together - <a href="#contact">Contact me now.</a></p>
-    </section>
-    <script> 
-        document.addEventListener("contextmenu", function (e) {
-            e.preventDefault();
-        });
-    </script>  
+    </section> 
     <script src="script.js"></script>  
 </body> 
-</html> 
+</html>
