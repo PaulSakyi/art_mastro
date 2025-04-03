@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Makes all text bold */
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
@@ -69,14 +70,7 @@ section {
     padding: 80px 20px;
     text-align: center;
 }
-
-/* About ArtMastro Section */
-#about-artmastro p {
-    font-weight: 600; /* Makes text bold */
-    font-size: 18px;  /* Adjust size if needed */
-    color: #333; /* Ensures good contrast */
-}
-
+ 
 /* Gallery */
 .gallery-container {
     display: flex;
