@@ -89,9 +89,7 @@ section {
 }
 
 .gallery-container img:hover {
-    transform: scale(1.1); /* Zoom effect on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
-
+    transform: scale(1.1);
 }
 
 /* Contact Form */
@@ -196,5 +194,41 @@ body {
     .gallery-container img {
         width: 100%;
     }
-} 
- 
+}
+/* Lightbox Styling */
+.lightbox {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.lightbox img {
+    transition: transform 0.3s ease;
+}
+
+.lightbox img:hover {
+    transform: scale(1.05);
+}
+
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
