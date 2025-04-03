@@ -51,3 +51,11 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     // Clear form fields
     document.getElementById("contact-form").reset();
 });
+function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "block";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}

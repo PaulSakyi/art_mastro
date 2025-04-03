@@ -30,17 +30,17 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-container">
-            <a href="images/20220801_083857.jpg" target="_blank">
-                <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1">
-            </a>
-            <a href="images/20220827_012035.jpg" target="_blank">
-                <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2">
-            </a>
-            <a href="images/20220816_121020.jpg" target="_blank">
-                <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3">
-            </a>
+            <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1" onclick="openLightbox('images/20220801_083857.jpg')">
+            <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2" onclick="openLightbox('images/20220827_012035.jpg')">
+            <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3" onclick="openLightbox('images/20220816_121020.jpg')">
         </div>
-    </section>         
+    </section>
+    
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-content">
+    </div>          
 
     <section id="contact">
         <h2>Contact Me</h2>
