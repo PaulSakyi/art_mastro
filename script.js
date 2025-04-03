@@ -73,3 +73,42 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxOverlay.classList.remove("active");
     });
 });
+function sendNotification(action, artworkId, comment = '') {
+    const templateParams = {
+        action: action,            // This will be "like", "comment", etc.
+        artworkId: artworkId,      // ID or name of the artwork
+        comment: comment,          // The comment left by the user (if any)
+    };
+
+    // Send the email using your service and template IDs
+    emailjs.send("gmail", "Artwork Interaction Notification", templateParams)
+        .then((response) => {
+            console.log("Email sent successfully", response);
+        })
+        .catch((error) => {
+            console.log("Failed to send email", error);
+        });
+}
+emailjs.init(service_hxgzttv);
+function sendNotification(event) {
+    // Data you want to send, replace with dynamic values based on user interaction
+    const formData = {
+      name: event.target.dataset.name, // Assuming you have the name as a data attribute
+      email: event.target.dataset.email, // Same for email
+      artwork: event.target.dataset.artwork // Assuming artwork identifier
+    };
+  
+    // Sending the email through EmailJS
+    emailjs.send("gmail", "Artwork Interaction Notification", formData)
+      .then(function(response) {
+        console.log("SUCCESS", response);
+      }, function(error) {
+        console.log("FAILED", error);
+      });
+  }
+  // Example for a "Like" button
+const likeButton = document.querySelector('.like-button');
+likeButton.addEventListener('click', sendNotification);
+
+// Do the same for comment or share buttons as well
+
