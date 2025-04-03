@@ -148,13 +148,13 @@ section {
     width: 300px;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Default shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Default shadow */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
 .gallery-item:hover {
     transform: scale(1.05); /* Slightly enlarges the image */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
 }
 
 body { 
