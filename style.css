@@ -10,6 +10,8 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 /* Header Navigation */
@@ -154,14 +156,15 @@ section {
 
 body { 
     background-image: url('vecteezy_a-colorful-wall-with-paint-splatters-and-paint-drips_30056710.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    image-rendering: high-quality;
 }
 
 /* Mobile responsiveness */
-@media screen and (max-width: 768px) {
-    /* Stack navigation links vertically on mobile */
+@media screen and (max-width: 768px) { 
     nav ul {
         flex-direction: column;
         text-align: center;
@@ -171,20 +174,17 @@ body {
         margin: 10px 0;
     }
 
-    /* Adjust logo positioning for mobile */
-    #logo {
+    #logo { 
         position: relative;
         left: 0;
         top: 0;
     }
 
-    /* Adjust padding in sections for smaller screens */
-    section {
+    section { 
         padding: 60px 20px;
     }
 
-    /* Gallery items adjustments */
-    .gallery-container {
+    .gallery-container { 
         flex-direction: column;
     }
 
