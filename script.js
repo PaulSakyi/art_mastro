@@ -82,3 +82,15 @@ document.querySelectorAll('.gallery-container img').forEach(image => {
         e.preventDefault(); // Prevent dragging the image
     });
 });
+function openLightbox(event) {
+    event.preventDefault();  // Prevents the default action (navigation to image)
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    lightbox.style.display = 'flex';
+    lightboxImg.src = event.target.src; // Set the image source to the clicked image
+}
+
+function closeLightbox() {
+    var lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none'; // Hide the lightbox
+}

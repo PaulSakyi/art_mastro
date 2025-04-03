@@ -233,40 +233,50 @@ body {
 
 .lightbox-overlay.active {
     display: flex;
+} 
+.gallery-container a {
+    display: inline-block;
 }
+
 .gallery-item {
-    display: block;
-    width: 100%; /* Adjust as needed */
-    max-width: 400px; /* Set a max width */
-    border-radius: 8px; /* Smooth corners */
-    transition: 0.3s ease-in-out;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6); /* Dark shadow */
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+    transform: scale(1.05);
+    cursor: pointer;
 }
-.gallery-container img {
-    width: 250px;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    pointer-events: none; /* Prevent drag and select */
-    -webkit-user-drag: none; /* Prevent drag */
-    user-select: none; /* Prevent selection */
-}
-.image-overlay {
-    position: absolute;
+
+/* Lightbox container styles */
+.lightbox {
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.5); /* Transparent overlay */
-    display: none; /* Hide the overlay until image is hovered */
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.image-wrapper:hover .image-overlay {
-    display: block; /* Show overlay on hover */
+#lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
 }
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+ 
