@@ -151,9 +151,44 @@ section {
 .gallery-item:hover {
     transform: scale(1.05);
 }
+
 body { 
     background-image: url('images/vibrant-abstract-watercolor-texture-creates-splash-paint-background_9919250.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-} 
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    /* Stack navigation links vertically on mobile */
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Adjust logo positioning for mobile */
+    #logo {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    /* Adjust padding in sections for smaller screens */
+    section {
+        padding: 60px 20px;
+    }
+
+    /* Gallery items adjustments */
+    .gallery-container {
+        flex-direction: column;
+    }
+
+    .gallery-container img {
+        width: 100%;
+    }
+}
