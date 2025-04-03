@@ -15,13 +15,14 @@ body {
 /* Header Navigation */
 header {
     background-color: #000;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -31,10 +32,11 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 5px 15px;
 }
 
 nav ul li a {
@@ -49,6 +51,17 @@ nav ul li a:hover {
     color: #f4a261;
 }
 
+/* Fix logo positioning */
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    z-index: 1001;
+}
+
 /* Sections */
 section {
     padding: 80px 20px;
@@ -61,6 +74,7 @@ section {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    padding-top: 60px;
 }
 
 .gallery-container img {
@@ -81,12 +95,16 @@ section {
     flex-direction: column;
     max-width: 400px;
     margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #contact-form input, 
 #contact-form textarea {
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #aaa;
     border-radius: 5px;
 }
@@ -94,7 +112,7 @@ section {
 #contact-form button {
     background-color: #007bff;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -105,85 +123,19 @@ section {
     background-color: #0056b3;
 }
 
-/* Dark Mode */
-.dark-mode {
-    background-color: #222;
-    color: #f5f5f5;
-}
-
-#dark-mode-toggle {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-#dark-mode-toggle:hover {
-    background-color: gray;
-}
-
-/* Lightbox */
-#lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-#lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-}
-
-#close-lightbox {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-}
-
-/* Logo */
-#logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    position: absolute;
-    left: 20px;
-    top: 15px;
-}
-
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Background Image */
-body {
-    background-image: url('images/pexels-steve-1789968.jpg');
-}
-
+/* WhatsApp Logo Fix */
 .whatsapp-logo {
-    display: block;
-    width: 50px; /* Adjust size */
+    display: inline-block;
+    width: 20px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
+/* Gallery Grid Layout */
 .gallery-images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -200,93 +152,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-    }
-
-    section {
-        padding: 60px 10px;
-    }
-
-    .gallery-container {
-        gap: 10px;
-    }
-
-    .gallery-container img {
-        width: 150px;
-    }
-
-    #contact-form {
-        width: 90%;
-    }
-
-    #contact-form input, 
-    #contact-form textarea {
-        padding: 8px;
-    }
-
-    #contact-form button {
-        padding: 12px;
-        font-size: 18px;
-    }
-
-    #logo {
-        font-size: 20px;
-        position: relative;
-        left: 10px;
-    }
-
-    .gallery-images {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    /* Adjust background size */
-    body {
-        background-size: cover;
-    }
-
-    #dark-mode-toggle {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 15px 0;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-
-    .gallery-container img {
-        width: 120px;
-    }
-
-    #contact-form {
-        width: 90%;
-    }
-
-    #contact-form input, 
-    #contact-form textarea {
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    #contact-form button {
-        padding: 10px;
-        font-size: 16px;
-    }
-
-    #logo {
-        font-size: 18px;
-    }
+/* Background Image */
+body {
+    background-image: url('images/pexels-steve-1789968.jpg');
 }
