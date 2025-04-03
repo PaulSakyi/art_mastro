@@ -34,10 +34,9 @@
             $imageFolder = "uploads/";
             $images = glob($imageFolder . "*.{jpg,png,jpeg,gif}", GLOB_BRACE);
     
-            if ($images) {
+            if ($images)
                 foreach ($images as $image)
-                    echo "<img src='$image' class='gallery-item' alt='Gallery Image'>";
-            }
+                    echo "<img src='$image' class='gallery-item' alt='Gallery Image'>
         </div>
     </section>           
 
