@@ -81,7 +81,7 @@ function sendNotification(action, artworkId, comment = '') {
     };
 
     // Send the email using your service and template IDs
-    emailjs.send("gmail", "Artwork Interaction Notification", templateParams)
+    emailjs.send("service_hxgzttv", "template_nxi00p2", templateParams)
         .then((response) => {
             console.log("Email sent successfully", response);
         })
@@ -111,4 +111,69 @@ const likeButton = document.querySelector('.like-button');
 likeButton.addEventListener('click', sendNotification);
 
 // Do the same for comment or share buttons as well
+document.addEventListener("DOMContentLoaded", function () {
+    // LIKE FUNCTIONALITY
+    document.querySelectorAll(".like-button").forEach(button => {
+        button.addEventListener("click", function () {
+            let artworkId = this.getAttribute("data-id");
+            let likeCountSpan = document.getElementById(`like-count-${artworkId}`);
+            let currentLikes = parseInt(likeCountSpan.textContent);
+            likeCountSpan.textContent = currentLikes + 1;
+            sendNotification(`Someone liked your artwork: ${artworkId}`);
+        });
+    });
+
+    // COMMENT FUNCTIONALITY
+    document.querySelectorAll(".comment-button").forEach(button => {
+        button.addEventListener("click", function () {
+            let artworkId = this.getAttribute("data-id");
+            let commentText = prompt("Enter your comment:");
+            if (commentText) {
+                let commentSection = document.getElementById(`comments-${artworkId}`);
+                let newComment = document.createElement("p");
+                newComment.classList.add("comment");
+                newComment.innerHTML = `<strong>Guest:</strong> ${commentText}`;
+                commentSection.appendChild(newComment);
+                sendNotification(`New comment on ${artworkId}: "${commentText}"`);
+            }
+        });
+    });
+
+    // SHARE FUNCTIONALITY
+    document.querySelectorAll(".share-button").forEach(button => {
+        button.addEventListener("click", function () {
+            let artworkId = this.getAttribute("data-id");
+            let imageUrl = document.querySelector(`[data-id='${artworkId}']`).parentElement.querySelector("img").src;
+            let shareText = `Check out this amazing artwork: ${imageUrl}`;
+            navigator.clipboard.writeText(shareText).then(() => {
+                alert("Artwork link copied to clipboard! Share it with your friends.");
+                sendNotification(`Someone shared your artwork: ${artworkId}`);
+            });
+        });
+    });
+
+    // FUNCTION TO SEND EMAIL NOTIFICATION (EmailJS)
+    function sendNotification(message) {
+        emailjs.send("service_hxgzttv", "template_nxi00p2", {
+            message: message,
+            to_email: "paulsak123@gmail.com"
+        }).then(response => {
+            console.log("Notification sent:", response);
+        }).catch(error => {
+            console.error("Error sending notification:", error);
+        });
+    }
+});
+emailjs.init("O3F-NJP9akN7CkHWP");
+
+function sendNotification(message) {
+    emailjs.send("service_hxgzttv", "template_nxi00p2", {
+        message: message,
+        to_email: "paulsak123@gmail.com"
+    }).then(response => {
+        console.log("Notification sent:", response);
+    }).catch(error => {
+        console.error("Error sending notification:", error);
+    });
+}
 
