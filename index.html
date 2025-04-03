@@ -30,15 +30,11 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-container">
-            <?php
-            $imageFolder = "uploads/";
-            $images = glob($imageFolder . "*.{jpg,png,jpeg,gif}", GLOB_BRACE);
-    
-            if ($images)
-                foreach ($images as $image)
-                    echo "<img src='$image' class='gallery-item' alt='Gallery Image'>
+            <img src="images/artwork1.jpg" class="gallery-item" alt="Artwork 1">
+            <img src="images/artwork2.jpg" class="gallery-item" alt="Artwork 2">
+            <img src="images/artwork3.jpg" class="gallery-item" alt="Artwork 3">
         </div>
-    </section>           
+    </section>        
 
     <section id="contact">
         <h2>Contact Me</h2>
@@ -66,11 +62,4 @@
         <p>📩 Let's create something amazing together - <a href="#contact">Contact me now.</a></p>
     </section>
 </body> 
-</html>
-<section id="upload">
-    <h2>Upload Image</h2>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" accept="image/*" required>
-        <button type="submit">Upload</button>
-    </form>
-</section>
+</html> 
