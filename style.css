@@ -245,3 +245,8 @@ body {
     transform: scale(1.05); /* Slight zoom on hover */
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
 }
+.gallery-container img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
