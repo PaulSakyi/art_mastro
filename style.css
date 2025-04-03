@@ -257,3 +257,16 @@ body {
     -webkit-user-drag: none; /* Prevent drag */
     user-select: none; /* Prevent selection */
 }
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Transparent overlay */
+    display: none; /* Hide the overlay until image is hovered */
+}
+
+.image-wrapper:hover .image-overlay {
+    display: block; /* Show overlay on hover */
+}

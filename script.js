@@ -73,3 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxOverlay.classList.remove("active");
     });
 });
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
+
+document.querySelectorAll('.gallery-container img').forEach(image => {
+    image.addEventListener('dragstart', function (e) {
+        e.preventDefault(); // Prevent dragging the image
+    });
+});

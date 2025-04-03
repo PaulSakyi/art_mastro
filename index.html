@@ -30,17 +30,20 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-container">
-            <a href="images/20220801_083857.jpg" class="lightbox">
-                <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1" draggable="false">
-            </a>
-            <a href="images/20220827_012035.jpg" class="lightbox">
-                <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2" draggable="false">
-            </a>
-            <a href="images/20220816_121020.jpg" class="lightbox">
-                <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3" draggable="false">
-            </a>
+            <div class="image-wrapper" style="position: relative;">
+                <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1" />
+                <div class="image-overlay"></div> <!-- This makes it harder to right-click and save -->
+            </div>
+            <div class="image-wrapper" style="position: relative;">
+                <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2" />
+                <div class="image-overlay"></div>
+            </div>
+            <div class="image-wrapper" style="position: relative;">
+                <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3" />
+                <div class="image-overlay"></div>
+            </div>
         </div>
-    </section>    
+    </section>      
     
     <!-- Lightbox Container -->
     <div id="lightbox" class="lightbox">
