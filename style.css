@@ -29,6 +29,11 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* Make room for the logo */
+    box-sizing: border-box;
 }
 
 #logo {
