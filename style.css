@@ -86,17 +86,16 @@ section {
 
 /* Gallery */
 .gallery-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
-    padding-top: 60px;
-    align-items: center;
+    padding: 20px;
+    justify-items: center;
 }
 
 .gallery-container img {
-    width: 100px;
-    max-width: 300px;
+    width: 100%; /* Makes images responsive */
+    max-width: 300px; /* Ensures they are not too small on desktop */
     height: auto;
     border-radius: 15px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
@@ -173,13 +172,13 @@ section {
 }
 
 /* Mobile responsiveness */
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
     nav ul {
         flex-direction: column;
+        align-items: center; /* Centers menu items */
         text-align: center;
     }
-
-    nav ul li {
+    nav ul li { 
         margin: 10px 0;
     }
 
