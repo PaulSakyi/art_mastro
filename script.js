@@ -71,21 +71,45 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Like button functionality
-    document.querySelectorAll(".like-button").forEach(button => {
-        button.addEventListener("click", () => {
-            let artworkId = button.getAttribute("data-id");
-            let likeCountSpan = document.getElementById(`like-count-${artworkId}`);
-            let currentLikes = parseInt(likeCountSpan.textContent) || 0;
+    // Like button functionality with localStorage
+    const likedArtworks = JSON.parse(localStorage.getItem("likedArtworks")) || {}; // Store liked artworks in localStorage
 
+    document.querySelectorAll(".like-button").forEach(button => {
+        let artworkId = button.getAttribute("data-id");
+        let likeCountSpan = document.getElementById(`like-count-${artworkId}`);
+
+        // Initialize like count from localStorage
+        let currentLikes = parseInt(likeCountSpan.textContent) || 0;
+
+        // Display initial like count
+        likeCountSpan.textContent = currentLikes;
+
+        // Check if the artwork is already liked
+        if (likedArtworks[artworkId]) {
+            button.classList.add("liked");
+        }
+
+        button.addEventListener("click", () => {
             if (!button.classList.contains("liked")) {
-                likeCountSpan.textContent = currentLikes + 1;
+                // Increment like count
+                currentLikes++;
+                likeCountSpan.textContent = currentLikes;
+
+                // Add liked class and store the like status
                 button.classList.add("liked");
+                likedArtworks[artworkId] = true; // Mark as liked
             } else {
-                likeCountSpan.textContent = currentLikes - 1; 
-                button.classList.remove("liked"); 
+                // Decrement like count
+                currentLikes--;
+                likeCountSpan.textContent = currentLikes;
+
+                // Remove the liked status
+                button.classList.remove("liked");
+                delete likedArtworks[artworkId]; // Unmark as liked
             }
+
+            // Save the like status to localStorage
+            localStorage.setItem("likedArtworks", JSON.stringify(likedArtworks));
         });
     });
 });
- 
