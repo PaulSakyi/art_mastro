@@ -20,6 +20,8 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
+        <AM 1-100>
+            <img src="AM 1-100.png" alt="Brand Logo" class="logo">
     </header>
     
     <section id="home"> 
@@ -106,25 +108,31 @@
         </div>
     </section>
 
+    <section id="contact"> 
+        <h2>Contact Me</h2>
+        <p>📞 Phone: <a href="tel:+233558251796">+233 558251796</a></p>
+        <p>✉ Mail: <a href="mailto:paulsak123@gmail.com">paulsak123@gmail.com</a></p>
+        <p>
+            <img src="whatsapp-icon.png" alt="WhatsApp Logo" width="20px">
+            <a href="https://wa.me/233558251796" target="_blank">+233 558251796</a>
+        </p>
+        <form id="contact-form" action="https://formsubmit.co/paulsak123@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>        
+        </form> 
+    </section>
+
     <section id="about">
-        <h2>About</h2>
-        <p>ArtMastro specializes in creating unique and beautiful artworks, including pencil drawings, paintings, and pen art. With a passion for capturing the essence of life and culture, we offer custom art commissions and help individuals express themselves through art.</p>
-    </section>
+        <h2>About ArtMastro</h2>
+        <p>I specialize in pencil drawings, paintings, and pen art, capturing beauty beyond vision and imagination. Whether you're looking 
+        for custom portraits, unique artwork, or inspiring designs, my art tells stories that connect hearts.</p>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" required></textarea><br><br>
-            <button type="submit">Send Message</button>
-        </form>
-        <p id="form-message"></p>
+        <p>📌 Available for commissions worldwide!</p>
+        <p>📩 Let's create something amazing together - <a href="#contact">Contact me now.</a></p>
     </section>
-
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 </body> 
-</html>
+</html> 
