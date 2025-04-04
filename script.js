@@ -73,3 +73,46 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxOverlay.classList.remove("active");
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    // Track liked artworks in the current session
+    const likedArtworks = JSON.parse(sessionStorage.getItem("likedArtworks")) || {}; // Load liked artworks from sessionStorage or initialize as empty
+
+    document.querySelectorAll(".like-button").forEach(button => {
+        const artworkId = button.getAttribute("data-id"); // Get the unique ID of the artwork
+        const likeCountSpan = document.getElementById(`like-count-${artworkId}`); // Get the span where like count is displayed
+
+        // Get the initial like count (can be dynamically loaded from a database, here it defaults to 0)
+        let currentLikes = parseInt(likeCountSpan.textContent) || 0;
+
+        // Display the initial like count
+        likeCountSpan.textContent = currentLikes;
+
+        // Check if the artwork has been liked in the current session
+        if (likedArtworks[artworkId]) {
+            button.classList.add("liked"); // Mark it as liked visually in this session
+        }
+
+        button.addEventListener("click", () => {
+            if (!button.classList.contains("liked")) {
+                // Increment like count if it's not already liked
+                currentLikes++;
+                likeCountSpan.textContent = currentLikes;
+
+                // Add liked class to show it's liked visually
+                button.classList.add("liked");
+                likedArtworks[artworkId] = true; // Mark as liked in the session
+            } else {
+                // Decrement like count if already liked
+                currentLikes--;
+                likeCountSpan.textContent = currentLikes;
+
+                // Remove liked class
+                button.classList.remove("liked");
+                delete likedArtworks[artworkId]; // Unmark as liked in the session
+            }
+
+            // Save the updated liked status to sessionStorage
+            sessionStorage.setItem("likedArtworks", JSON.stringify(likedArtworks));
+        });
+    });
+});

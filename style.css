@@ -270,40 +270,32 @@ figcaption {
     margin-top: 5px;
     color: #f5f2f2;
     display: block;  /* Ensures the caption is below the image */
-}
-.like-container {
-    text-align: center;
-    margin-top: 5px;
-}
+} 
 
+/* Style for the like button */
 .like-button {
-    background: none;
+    background-color: transparent;
     border: none;
     font-size: 20px;
-    cursor: pointer;
-    color: #fffefe;
-    transition: color 0.3s ease-in-out;
+    cursor: pointer; 
 }
 
-.like-button:hover {
-    color: red;
-}
-
+/* Style when the artwork is liked */
 .like-button.liked {
     color: red;
 }
-.like-button {
-    border: none;
-    background: none;
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+
+/* Basic styling for the gallery */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+figcaption {
+    text-align: center;
 }
 
 .like-button:hover {
-    transform: scale(1.2);
-}
-
-.liked {
     color: red;
 }
