@@ -87,15 +87,15 @@ section {
 /* Gallery */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 columns on desktop */
     gap: 20px;
     padding: 20px;
     justify-items: center;
 }
 
 .gallery-container img {
-    width: 100%; /* Makes images responsive */
-    max-width: 300px; /* Ensures they are not too small on desktop */
+    width: 100%; /* Ensures responsiveness */
+    max-width: 100%; /* Prevents stretching */
     height: auto;
     border-radius: 15px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
@@ -192,8 +192,8 @@ section {
         padding: 60px 20px;
     }
 
-    .gallery-container { 
-        flex-direction: column;
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr); /* One image per row */
     }
 
     .gallery-container img {
