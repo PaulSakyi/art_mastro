@@ -1,19 +1,14 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Dark mode toggle
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-        });
-    }
+document.getElementById("dark-mode-toggle").addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+});
 
-    // Redirect to Netlify site when running locally
-    if (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") {
-        window.location.href = "https://artmastro.netlify.app/";
-    }
+// Redirect to Netlify site when running locally
+if (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") {
+    window.location.href = "https://artmastro.netlify.app/";
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
 
-    // Intersection Observer for animations
-    const sections = document.querySelectorAll("section"); 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -22,9 +17,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { threshold: 0.2 });
 
-    sections.forEach(section => observer.observe(section));
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+document.querySelectorAll(".gallery-img").forEach(img => {
+    img.addEventListener("click", function () {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = this.src;
+    });
+});
 
-    // Lightbox functionality
+document.getElementById("close-lightbox").addEventListener("click", function () {
+    document.getElementById("lightbox").style.display = "none";
+});
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let formMessage = document.getElementById("form-message");
+
+    if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+        formMessage.style.color = "red";
+        formMessage.textContent = "Please fill in all fields!";
+        return;
+    }
+
+    formMessage.style.color = "green";
+    formMessage.textContent = "Message sent successfully!";
+    
+    // Clear form fields
+    document.getElementById("contact-form").reset();
+}); 
+document.addEventListener("DOMContentLoaded", function () {
     const lightboxLinks = document.querySelectorAll(".lightbox");
     const lightboxOverlay = document.createElement("div");
     lightboxOverlay.classList.add("lightbox-overlay");
@@ -34,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(lightboxOverlay);
 
     lightboxLinks.forEach(link => {
-        link.addEventListener("click", event => {
+        link.addEventListener("click", function (event) {
             event.preventDefault();
             const imageSrc = link.getAttribute("href");
             lightboxImage.src = imageSrc;
@@ -42,74 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    lightboxOverlay.addEventListener("click", () => {
+    lightboxOverlay.addEventListener("click", function () {
         lightboxOverlay.classList.remove("active");
-    });
-
-    // Contact form validation
-    const contactForm = document.getElementById("contact-form");
-    if (contactForm) {
-        contactForm.addEventListener("submit", event => {
-            event.preventDefault();
-
-            let name = document.getElementById("name").value.trim();
-            let email = document.getElementById("email").value.trim();
-            let message = document.getElementById("message").value.trim();
-            let formMessage = document.getElementById("form-message");
-
-            if (!name || !email || !message) {
-                formMessage.style.color = "red";
-                formMessage.textContent = "Please fill in all fields!";
-                return;
-            }
-
-            formMessage.style.color = "green";
-            formMessage.textContent = "Message sent successfully!";
-            
-            // Clear form fields
-            contactForm.reset();
-        });
-    }
-
-    // Like button functionality with localStorage
-    const likedArtworks = JSON.parse(localStorage.getItem("likedArtworks")) || {}; // Store liked artworks in localStorage
-
-    document.querySelectorAll(".like-button").forEach(button => {
-        let artworkId = button.getAttribute("data-id");
-        let likeCountSpan = document.getElementById(`like-count-${artworkId}`);
-
-        // Initialize like count from localStorage
-        let currentLikes = parseInt(likeCountSpan.textContent) || 0;
-
-        // Display initial like count
-        likeCountSpan.textContent = currentLikes;
-
-        // Check if the artwork is already liked
-        if (likedArtworks[artworkId]) {
-            button.classList.add("liked");
-        }
-
-        button.addEventListener("click", () => {
-            if (!button.classList.contains("liked")) {
-                // Increment like count
-                currentLikes++;
-                likeCountSpan.textContent = currentLikes;
-
-                // Add liked class and store the like status
-                button.classList.add("liked");
-                likedArtworks[artworkId] = true; // Mark as liked
-            } else {
-                // Decrement like count
-                currentLikes--;
-                likeCountSpan.textContent = currentLikes;
-
-                // Remove the liked status
-                button.classList.remove("liked");
-                delete likedArtworks[artworkId]; // Unmark as liked
-            }
-
-            // Save the like status to localStorage
-            localStorage.setItem("likedArtworks", JSON.stringify(likedArtworks));
-        });
     });
 });
