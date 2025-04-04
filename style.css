@@ -281,7 +281,7 @@ figcaption {
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: #888;
+    color: #fffefe;
     transition: color 0.3s ease-in-out;
 }
 
