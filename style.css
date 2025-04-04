@@ -271,9 +271,24 @@ figcaption {
 
 /* Mobile Responsive */ 
 @media screen and (max-width: 768px) {
+    nav {
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: black;
+        width: 100%;
+        text-align: center;
+    }
     nav ul {
         flex-direction: column;
-        text-align: center;
+        padding: 10px;
+    }
+    .logo {
+        margin-right: 10px;
+    }
+    .main-content {
+        padding-top: 150px; /* Ensures content is fully visible */
     }
 
     nav ul li {
@@ -309,9 +324,7 @@ figcaption {
     .like-container {
         font-size: 18px;
     }
-}
-
-@media screen and (max-width: 480px) {
+} 
     #contact-form {
         padding: 10px;
     }
@@ -331,5 +344,4 @@ figcaption {
 
     .like-button {
         font-size: 18px;
-    }
-}
+    } 
