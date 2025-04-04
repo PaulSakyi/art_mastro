@@ -271,3 +271,24 @@ figcaption {
     color: #f5f2f2;
     display: block;  /* Ensures the caption is below the image */
 }
+.like-container {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s ease-in-out;
+}
+
+.like-button:hover {
+    color: red;
+}
+
+.like-button.liked {
+    color: red;
+}

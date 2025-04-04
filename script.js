@@ -73,3 +73,22 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxOverlay.classList.remove("active");
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".like-button").forEach(button => {
+        button.addEventListener("click", function () {
+            let artworkId = this.getAttribute("data-id");
+            let likeCountSpan = document.getElementById(`like-count-${artworkId}`);
+            let currentLikes = parseInt(likeCountSpan.textContent) || 0;
+
+            // Toggle like effect
+            if (!this.classList.contains("liked")) {
+                likeCountSpan.textContent = currentLikes + 1;
+                this.classList.add("liked");
+            } else {
+                likeCountSpan.textContent = currentLikes - 1;
+                this.classList.remove("liked");
+            }
+        });
+    });
+});
+
