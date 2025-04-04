@@ -16,6 +16,7 @@ body {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
     transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -81,6 +82,8 @@ nav ul li a:hover {
 section {
     padding: 80px 20px;
     text-align: center;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* Gallery Styles */
@@ -106,21 +109,55 @@ section {
 
 .gallery-images { 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
 .gallery-item { 
+    position: relative;
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Like Button - hover show */
+.like-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.gallery-item:hover .like-container {
+    opacity: 1;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.like-button:hover,
+.like-button.liked {
+    color: red;
 }
 
 /* Lightbox */
@@ -221,27 +258,7 @@ figcaption {
     color: #f5f2f2; 
 }
 
-/* Like Button */
-.like-container {
-    text-align: center;
-    margin-top: 5px;
-}
-
-.like-button {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #ffffff;
-    transition: color 0.3s ease-in-out;
-}
-
-.like-button:hover,
-.like-button.liked {
-    color: red;
-}
-
-/* Mobile Responsive */
+/* Mobile Responsive */ 
 @media screen and (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -264,9 +281,44 @@ figcaption {
 
     .gallery-container {
         flex-direction: column;
+        align-items: center;
     }
 
     .gallery-container img {
-        width: 100%;
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .gallery-images {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .like-container {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #contact-form {
+        padding: 10px;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        padding: 10px;
+    }
+
+    #contact-form button {
+        padding: 10px;
+    }
+
+    figcaption {
+        font-size: 14px;
+    }
+
+    .like-button {
+        font-size: 18px;
     }
 }
