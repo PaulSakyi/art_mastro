@@ -1,163 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtMastro - Home</title>
-    <meta name="description" content="Artmastro - Pencil Drawings, Paintings, and Pen Art. Available for commissions worldwide.">
-    <meta name="keywords" content="art, drawings, paintings, pencil art, commissions, portraits, custom art">
-    <meta name="author" content="Artmastro"> 
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ArtMastro - Home</title>
+  <meta name="description" content="Artmastro - Pencil Drawings, Paintings, and Pen Art. Available for commissions worldwide.">
+  <meta name="keywords" content="art, drawings, paintings, pencil art, commissions, portraits, custom art">
+  <meta name="author" content="Artmastro"> 
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body> 
-    <header>
-        <nav>
-            <ul>
-                <li id="logo">Art_Mastro</li>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li> 
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-        <AM 1-100>
-            <img src="AM 1-100.png" alt="Brand Logo" class="logo">
-    </header>
-    
-    <section id="home"> 
-        <h1>Welcome</h1>
-        <p>Discover amazing artworks and creative designs.</p>
-    </section>    
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li id="logo">Art_Mastro</li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <img src="AM 1-100.png" alt="Brand Logo" class="logo">
+  </header>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-container">
-            <figure>
-                <a href="images/20220801_083857.jpg" class="lightbox">
-                    <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1">
-                </a>
-                <figcaption>Rhythm of Hope</figcaption>
-            </figure>
-            <div class="like-container">
-                <button class="like-button" data-id="1"> ❤️ <span id="like-count-1">0</span>
-                </button>
+  <section id="home">
+    <h1>Welcome</h1>
+    <p>Discover amazing artworks and creative designs.</p>
+  </section>
 
-            <figure> 
-                <a href="images/20220827_012035.jpg" class="lightbox">
-                    <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2">
-                </a>
-                <figcaption>Strength and Unity</figcaption>
-            </figure>
-            <div class="like-container">
-                <button class="like-button" data-id="1">
-                    ❤️ <span id="like-count-1">0</span>
-                </button>
-    
-            <figure>
-                <a href="images/20220816_121020.jpg" class="lightbox">
-                    <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3">
-                </a>
-                <figcaption>Harmony of Africa</figcaption>
-            </figure>
-            <div class="like-container">
-                <button class="like-button" data-id="1">
-                    ❤️ <span id="like-count-1">0</span>
-                </button>
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-container">
 
-            <figure>
-                <a href="images/Artwork_4.jpg" class="lightbox">
-                    <img src="images/Artwork_4.jpg" class="gallery-item" alt="Artwork 4">
-                </a>
-                <figcaption>Spiritual</figcaption>
-            </figure>
-            <div class="like-container">
-                <button class="like-button" data-id="1">
-                    ❤️ <span id="like-count-1">0</span>
-                </button>
+      <!-- Artwork 1 -->
+      <div class="artwork">
+        <figure>
+          <a href="images/20220801_083857.jpg" class="lightbox">
+            <img src="images/20220801_083857.jpg" class="gallery-item" alt="Artwork 1">
+          </a>
+          <figcaption>Rhythm of Hope</figcaption>
+        </figure>
+        <button class="like-button" data-id="1" title="Like this artwork ❤️">
+          ❤️ <span id="like-count-1">0</span>
+        </button>
+      </div>
 
-            <figure>
-                <a href="images/Artwork_5.jpg" class="lightbox">
-                    <img src="images/Artwork_5.jpg" class="gallery-item" alt="Artwork 5">
-                </a>
-                <figcaption>Beauty Slumber</figcaption>
-            </figure>
-            <div class="like-container">
-                <button class="like-button" data-id="1">
-                    ❤️ <span id="like-count-1">0</span>
-                </button>
+      <!-- Artwork 2 -->
+      <div class="artwork">
+        <figure>
+          <a href="images/20220827_012035.jpg" class="lightbox">
+            <img src="images/20220827_012035.jpg" class="gallery-item" alt="Artwork 2">
+          </a>
+          <figcaption>Strength and Unity</figcaption>
+        </figure>
+        <button class="like-button" data-id="2" title="Like this artwork ❤️">
+          ❤️ <span id="like-count-2">0</span>
+        </button>
+      </div>
 
-            <figure>
-                <a href="images/Artwork_6.jpg" class="lightbox">
-                    <img src="images/Artwork_6.jpg" class="gallery-item" alt="Artwork 6">
-                </a>
-                <figcaption>The Upgrade</figcaption>
-            </figure>
-            <div class="like-container">
-                <button class="like-button" data-id="1">
-                    ❤️ <span id="like-count-1">0</span>
-                </button>
+      <!-- Artwork 3 -->
+      <div class="artwork">
+        <figure>
+          <a href="images/20220816_121020.jpg" class="lightbox">
+            <img src="images/20220816_121020.jpg" class="gallery-item" alt="Artwork 3">
+          </a>
+          <figcaption>Harmony of Africa</figcaption>
+        </figure>
+        <button class="like-button" data-id="3" title="Like this artwork ❤️">
+          ❤️ <span id="like-count-3">0</span>
+        </button>
+      </div>
 
-            <figure>
-                <a href="images/Artwork_7.jpg" class="lightbox">
-                    <img src="images/Artwork_7.jpg" class="gallery-item" alt="Artwork 7">
-                </a>
-                <figcaption>Captured</figcaption>
-            </figure>
-            <div class="like-container">
-                <button class="like-button" data-id="1">
-                    ❤️ <span id="like-count-1">0</span>
-                </button>
+      <!-- Artwork 4 -->
+      <div class="artwork">
+        <figure>
+          <a href="images/Artwork_4.jpg" class="lightbox">
+            <img src="images/Artwork_4.jpg" class="gallery-item" alt="Artwork 4">
+          </a>
+          <figcaption>Spiritual</figcaption>
+        </figure>
+        <button class="like-button" data-id="4" title="Like this artwork ❤️">
+          ❤️ <span id="like-count-4">0</span>
+        </button>
+      </div>
 
-            <figure>
-                <a href="images/Artwork_8.jpg" class="lightbox">
-                    <img src="images/Artwork_8.jpg" class="gallery-item" alt="Artwork 8">
-                </a>
-                <figcaption>Classic Elegance</figcaption>
-            </figure>
-            <div class="like-container">
-                <button class="like-button" data-id="1">
-                    ❤️ <span id="like-count-1">0</span>
-                </button>
+      <!-- Artwork 5 -->
+      <div class="artwork">
+        <figure>
+          <a href="images/Artwork_5.jpg" class="lightbox">
+            <img src="images/Artwork_5.jpg" class="gallery-item" alt="Artwork 5">
+          </a>
+          <figcaption>Beauty Slumber</figcaption>
+        </figure>
+        <button class="like-button" data-id="5" title="Like this artwork ❤️">
+          ❤️ <span id="like-count-5">0</span>
+        </button>
+      </div>
 
-            <figure>
-                <a href="images/Artwork_9.jpg" class="lightbox">
-                    <img src="images/Artwork_9.jpg" class="gallery-item" alt="Artwork 9">
-                </a>
-                <figcaption>Dr Andison</figcaption>
-            </figure>
-            <div class="like-container">
-                <button class="like-button" data-id="1">
-                    ❤️ <span id="like-count-1">0</span>
-                </button>
-            
-        </div>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>📞 Phone: <a href="tel:+233558251796">+233 558251796</a></p>
-        <p>✉ Mail: <a href="mailto:paulsak123@gmail.com">paulsak123@gmail.com</a></p>
-        <p>
-            <img src="whatsapp-icon.png" alt="WhatsApp Logo" width="20px">
-            <a href="https://wa.me/233558251796" target="_blank">+233 558251796</a>
-        </p>
-        <form id="contact-form" action="https://formsubmit.co/paulsak123@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New Contact Form Submission">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>        
-        </form>
-    </section>
+      <!-- Artwork 6 -->
+      <div class="artwork">
+        <figure>
+          <a href="images/Artwork_6.jpg" class="lightbox">
+            <img src="images/Artwork_6.jpg" class="gallery-item" alt="Artwork 6">
+          </a>
+          <figcaption>The Upgrade</figcaption>
+        </figure>
+        <button class="like-button" data-id="6" title="Like this artwork ❤️">
+          ❤️ <span id="like-count-6">0</span>
+        </button>
+      </div>
 
-    <section id="about">
-        <h2>About ArtMastro</h2>
-        <p>I specialize in pencil drawings, paintings, and pen art, capturing beauty beyond vision and imagination. Whether you're looking 
-        for custom portraits, unique artwork, or inspiring designs, my art tells stories that connect hearts.</p>
+      <!-- Artwork 7 -->
+      <div class="artwork">
+        <figure>
+          <a href="images/Artwork_7.jpg" class="lightbox">
+            <img src="images/Artwork_7.jpg" class="gallery-item" alt="Artwork 7">
+          </a>
+          <figcaption>Captured</figcaption>
+        </figure>
+        <button class="like-button" data-id="7" title="Like this artwork ❤️">
+          ❤️ <span id="like-count-7">0</span>
+        </button>
+      </div>
 
-        <p>📌 Available for commissions worldwide!</p>
-        <p>📩 Let's create something amazing together - <a href="#contact">Contact me now.</a></p>
-    </section>
-    <script src="script.js"></script>
-</body> 
-</html> 
+      <!-- Artwork 8 -->
+      <div class="artwork">
+        <figure>
+          <a href="images/Artwork_8.jpg" class="lightbox">
+            <img src="images/Artwork_8.jpg" class="gallery-item" alt="Artwork 8">
+          </a>
+          <figcaption>Classic Elegance</figcaption>
+        </figure>
+        <button class="like-button" data-id="8" title="Like this artwork ❤️">
+          ❤️ <span id="like-count-8">0</span>
+        </button>
+      </div>
+
+      <!-- Artwork 9 -->
+      <div class="artwork">
+        <figure>
+          <a href="images/Artwork_9.jpg" class="lightbox">
+            <img src="images/Artwork_9.jpg" class="gallery-item" alt="Artwork 9">
+          </a>
+          <figcaption>Dr Andison</figcaption>
+        </figure>
+        <button class="like-button" data-id="9" title="Like this artwork ❤️">
+          ❤️ <span id="like-count-9">0</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>📞 Phone: <a href="tel:+233558251796">+233 558251796</a></p>
+    <p>✉ Mail: <a href="mailto:paulsak123@gmail.com">paulsak123@gmail.com</a></p>
+    <p>
+      <img src="whatsapp-icon.png" alt="WhatsApp Logo" width="20px">
+      <a href="https://wa.me/233558251796" target="_blank">+233 558251796</a>
+    </p>
+    <form id="contact-form" action="https://formsubmit.co/paulsak123@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Contact Form Submission">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section id="about">
+    <h2>About ArtMastro</h2>
+    <p>I specialize in pencil drawings, paintings, and pen art, capturing beauty beyond vision and imagination. Whether you're looking 
+    for custom portraits, unique artwork, or inspiring designs, my art tells stories that connect hearts.</p>
+
+    <p>📌 Available for commissions worldwide!</p>
+    <p>📩 Let's create something amazing together - <a href="#contact">Contact me now.</a></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
