@@ -1,14 +1,19 @@
-document.getElementById("dark-mode-toggle").addEventListener("click", function() {
-    document.body.classList.toggle("dark-mode");
-});
+document.addEventListener("DOMContentLoaded", () => {
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    }
 
-// Redirect to Netlify site when running locally
-if (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") {
-    window.location.href = "https://artmastro.netlify.app/";
-}
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
+    // Redirect to Netlify site when running locally
+    if (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") {
+        window.location.href = "https://artmastro.netlify.app/";
+    }
 
+    // Intersection Observer for animations
+    const sections = document.querySelectorAll("section"); 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -17,41 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, { threshold: 0.2 });
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-});
-document.querySelectorAll(".gallery-img").forEach(img => {
-    img.addEventListener("click", function () {
-        document.getElementById("lightbox").style.display = "flex";
-        document.getElementById("lightbox-img").src = this.src;
-    });
-});
+    sections.forEach(section => observer.observe(section));
 
-document.getElementById("close-lightbox").addEventListener("click", function () {
-    document.getElementById("lightbox").style.display = "none";
-});
-document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-    let formMessage = document.getElementById("form-message");
-
-    if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
-        formMessage.style.color = "red";
-        formMessage.textContent = "Please fill in all fields!";
-        return;
-    }
-
-    formMessage.style.color = "green";
-    formMessage.textContent = "Message sent successfully!";
-    
-    // Clear form fields
-    document.getElementById("contact-form").reset();
-}); 
-document.addEventListener("DOMContentLoaded", function () {
+    // Lightbox functionality
     const lightboxLinks = document.querySelectorAll(".lightbox");
     const lightboxOverlay = document.createElement("div");
     lightboxOverlay.classList.add("lightbox-overlay");
@@ -61,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(lightboxOverlay);
 
     lightboxLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
+        link.addEventListener("click", event => {
             event.preventDefault();
             const imageSrc = link.getAttribute("href");
             lightboxImage.src = imageSrc;
@@ -69,46 +42,50 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    lightboxOverlay.addEventListener("click", function () {
+    lightboxOverlay.addEventListener("click", () => {
         lightboxOverlay.classList.remove("active");
     });
-});
-document.addEventListener("DOMContentLoaded", function () {
+
+    // Contact form validation
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", event => {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+            let formMessage = document.getElementById("form-message");
+
+            if (!name || !email || !message) {
+                formMessage.style.color = "red";
+                formMessage.textContent = "Please fill in all fields!";
+                return;
+            }
+
+            formMessage.style.color = "green";
+            formMessage.textContent = "Message sent successfully!";
+            
+            // Clear form fields
+            contactForm.reset();
+        });
+    }
+
+    // Like button functionality
     document.querySelectorAll(".like-button").forEach(button => {
-        button.addEventListener("click", function () {
-            let artworkId = this.getAttribute("data-id");
+        button.addEventListener("click", () => {
+            let artworkId = button.getAttribute("data-id");
             let likeCountSpan = document.getElementById(`like-count-${artworkId}`);
             let currentLikes = parseInt(likeCountSpan.textContent) || 0;
 
-            // Toggle like effect
-            if (!this.classList.contains("liked")) {
+            if (!button.classList.contains("liked")) {
                 likeCountSpan.textContent = currentLikes + 1;
-                this.classList.add("liked");
-            } else {
-                likeCountSpan.textContent = currentLikes - 1;
-                this.classList.remove("liked");
-            }
-        });
-    });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const likeButtons = document.querySelectorAll(".like-button");
-
-    likeButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const likeCount = button.querySelector("span");
-            let currentLikes = parseInt(likeCount.textContent);
-
-            if (button.classList.contains("liked")) {
-                // Unlike (remove 1)
-                likeCount.textContent = currentLikes - 1;
-                button.classList.remove("liked");
-            } else {
-                // Like (add 1)
-                likeCount.textContent = currentLikes + 1;
                 button.classList.add("liked");
+            } else {
+                likeCountSpan.textContent = currentLikes - 1; 
+                button.classList.remove("liked"); 
             }
         });
     });
 });
-
+ 
