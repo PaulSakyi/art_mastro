@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 likeCountSpan.textContent = currentLikes - 1;
                 this.classList.remove("liked");
-            } 
+            }
         });
     });
 });
