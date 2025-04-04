@@ -292,3 +292,18 @@ figcaption {
 .like-button.liked {
     color: red;
 }
+.like-button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.like-button:hover {
+    transform: scale(1.2);
+}
+
+.liked {
+    color: red;
+}

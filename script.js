@@ -91,4 +91,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const likeButtons = document.querySelectorAll(".like-button");
+
+    likeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const likeCount = button.querySelector("span");
+            let currentLikes = parseInt(likeCount.textContent);
+
+            if (button.classList.contains("liked")) {
+                // Unlike (remove 1)
+                likeCount.textContent = currentLikes - 1;
+                button.classList.remove("liked");
+            } else {
+                // Like (add 1)
+                likeCount.textContent = currentLikes + 1;
+                button.classList.add("liked");
+            }
+        });
+    });
+});
 
