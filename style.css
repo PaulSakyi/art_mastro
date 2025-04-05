@@ -277,6 +277,7 @@ section {
         background: black;
         display: none;
         padding: 10px;
+        z-index: 1000;
     }
 
     nav ul {
@@ -300,6 +301,14 @@ section {
         border-radius: 50%;
         object-fit: cover;
         z-index: 1001;
+    }
+    #logo {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        z-index: 1001;
+        font-size: 20px;
+        color: white;
     }    
 
     .main-content {
@@ -345,11 +354,5 @@ section {
 
     .like-button {
         font-size: 18px;
-    }
-    #logo {
-        left: 20px;
-        top: 15px;
-        position: absolute;
-        font-size: 20px;
-}
+    } 
 }
