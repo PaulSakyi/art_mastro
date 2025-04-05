@@ -346,4 +346,10 @@ section {
     .like-button {
         font-size: 18px;
     }
+    #logo {
+        left: 20px;
+        top: 15px;
+        position: absolute;
+        font-size: 20px;
+}
 }
