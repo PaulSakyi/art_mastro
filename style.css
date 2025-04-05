@@ -256,6 +256,16 @@ section {
 
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
+    .site-header {
+        flex-wrap: nowrap;
+      }
+    
+    .branding {
+        flex: 1;
+        order: 1;
+        text-align: left;
+      }
+
     .menu-toggle {
         display: block;
         position: absolute;
