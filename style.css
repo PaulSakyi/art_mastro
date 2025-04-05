@@ -290,12 +290,11 @@ section {
         margin: 10px 0;
     }
 
-    .logo {
-        margin: 0 auto;  /* Center logo */
+    .logo { 
         position: absolute;
         top: 15px;
-        left: 50%;
-        transform: translateX(-50%);
+        right: 20px;
+        transform: none;
         width: 50px;
         height: 50px;
         border-radius: 50%;
