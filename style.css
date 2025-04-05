@@ -241,18 +241,7 @@ section {
 
 #contact-form button:hover {
     background-color: #0056b3;
-}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-}
+} 
 
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
@@ -261,12 +250,13 @@ section {
         position: absolute;
         top: 15px;
         right: 20px;
+        font-size: 2rem;
     }
 
     nav.active {
         display: flex;
     }
-    
+
     nav {
         flex-direction: column;
         align-items: center;
@@ -290,34 +280,7 @@ section {
         margin: 10px 0;
     }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        background: rgba(0, 0, 0, 0.9);
-        text-align: center;
-        border-radius: 5px;
-      }
-
-      .nav-links a {
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-        display: block;
-      }
-
-      .nav-links a:hover {
-        background: #444;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-    .logo { 
+    .logo {  
         position: absolute;
         top: 10px;
         left: 15px;
@@ -326,11 +289,7 @@ section {
         color: white;
     }
 
-    .main-content {
-        padding-top: 150px; /* Ensures content is fully visible */
-    }
-
-    .gallery-container {
+    .gallery-container { 
         flex-direction: column;
         align-items: center;
     }
@@ -371,6 +330,8 @@ section {
         font-size: 18px;
     }
 }
+
+/* Site Header */
 .site-header {
     display: flex;
     align-items: center;
@@ -379,91 +340,82 @@ section {
     padding: 1rem;
     background-color: #111;
     color: white;
-  }
-  
-  /* Branding (Art_mastro text) */
-  .site-title {
+}
+
+.site-title {
     font-size: 1.8rem;
     font-weight: bold;
     color: #fff;
     margin: 0;
-    order: 1;
-  }
+}
 
-  .main-nav {
-    order: 2;
-    flex-grow: 1;
+.main-nav {
     display: flex;
     justify-content: center;
-  }
-  
-  /* Logo styling */
-  .logo img {
+    flex-grow: 1;
+}
+
+.logo img {
     height: 50px;
     width: auto;
-  }
+}
 
-  .logo {
-    order: 3;
-  }
-
-  .main-nav ul {
+/* Main Navigation */
+.main-nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
     gap: 1.2rem;
-  }
+}
 
-  .main-nav a {
+.main-nav a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-  }
-  
-  /* Mobile Styles */
+}
+
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
     .site-header {
-      flex-direction: column;
-      align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  
+
     .main-nav {
-      width: 100%;
-      justify-content: flex-start;
+        width: 100%;
+        justify-content: flex-start;
     }
-  
+
     .main-nav ul {
-      flex-direction: column;
-      display: none;
-      background-color: #222;
-      padding: 1rem;
-      width: 100%;
+        flex-direction: column;
+        display: none;
+        background-color: #222;
+        padding: 1rem;
+        width: 100%;
     }
-  
+
     .main-nav.active ul {
-      display: flex;
+        display: flex;
     }
-  
+
     .menu-toggle {
-      display: block;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-      margin-top: 0.5rem;
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin-top: 0.5rem;
     }
-  
+
     .branding, .logo {
-      order: unset;
+        order: unset;
     }
-  }
-  
-  @media screen and (min-width: 769px) {
+}
+
+@media screen and (min-width: 769px) {
     .menu-toggle {
-      display: none;
+        display: none;
     }
-  }
-  
-  
+}
