@@ -244,16 +244,15 @@ section {
 }
 .menu-toggle {
     .menu-toggle {
-        display: none; /* Initially hidden on desktop */
+        display: none;
         background: none;
         border: none;
         font-size: 2rem;
         color: white;
         cursor: pointer;
         position: absolute;
-        top: 15px; /* Adjust vertical positioning */
-        right: 15px; /* Moves it to the right corner */
-        z-index: 1000; /* Ensures it stays on top */
+        top: 15px;
+        left: 15px;
 }
 
 /* Mobile Responsive */
