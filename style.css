@@ -290,6 +290,33 @@ section {
         margin: 10px 0;
     }
 
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        border-radius: 5px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+      }
+
+      .nav-links a:hover {
+        background: #444;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
     .logo { 
         position: absolute;
         top: 10px;
