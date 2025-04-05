@@ -139,39 +139,7 @@ section {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-/* Like Button - hover show */
-.like-container {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 5px 10px;
-    border-radius: 20px;
-    z-index: 10;
-}
-
-.gallery-item:hover .like-container {
-    opacity: 1;
-}
-
-.like-button {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #ffffff;
-    transition: color 0.3s ease-in-out;
-}
-
-.like-button:hover,
-.like-button.liked {
-    color: red;
-}
-
-/* Lightbox */
+/* Lightbox */ 
 .lightbox {
     position: relative;
     display: inline-block;
@@ -331,11 +299,7 @@ section {
         padding: 10px;
     }
 
-    .like-container {
-        font-size: 18px;
-    }
-
-    #contact-form {
+    #contact-form { 
         padding: 10px;
     }
 
@@ -349,10 +313,6 @@ section {
     }
 
     figcaption {
-        font-size: 14px;
-    }
-
-    .like-button {
-        font-size: 18px;
+        font-size: 14px; 
     } 
 }
