@@ -255,23 +255,13 @@ section {
 }
 
 /* Mobile Responsive */
-@media screen and (max-width: 768px) {
-    .site-header {
-        flex-wrap: nowrap;
-      }
-    
-    .branding {
-        flex: 1;
-        order: 1;
-        text-align: left;
-      }
-
+@media screen and (max-width: 768px) { 
     .menu-toggle {
         display: block;
         position: absolute;
         top: 15px;
         right: 20px;
-    } 
+    }
 
     nav.active {
         display: flex;
@@ -357,4 +347,3 @@ section {
         font-size: 18px;
     }
 }
- 
